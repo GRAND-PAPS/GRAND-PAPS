@@ -20,8 +20,15 @@
          <%-- Second Div and headings--%>
         <div class="col-lg-12 row mt-4 w3-margin-16">
             <div class="col-lg-3">
-                Select District: <asp:DropDownList ID="DistrictDropDown" runat="server" 
-                    DataTextField="Name" DataValueField="DistrictId" />
+
+                Select District: 
+                <asp:DropDownList ID="DistrictDropDown" runat="server" 
+                    DataTextField="Name" DataValueField="DistrictId" 
+                    OnSelectedIndexChanged="DistrictDropDown_SelectedIndexChanged" />
+                <br /><br />
+                Select TA:
+                <asp:DropDownList ID="TADropDown" runat="server" DataTextField="Name"
+                     DataValueField="TAId" />
                 <asp:GridView ID="dataGridView" CssClass="table table-hover" runat="server" />
             </div>
             <div class="col-lg-5">

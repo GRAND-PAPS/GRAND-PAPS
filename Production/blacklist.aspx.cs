@@ -44,5 +44,11 @@ namespace Production
                 con.Close();
             }
         }
+
+        protected void DistrictDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TADropDown.Items.Clear();
+            TADropDown.Items.Insert(0, "SELECT TA");
+        }
     }
 }
