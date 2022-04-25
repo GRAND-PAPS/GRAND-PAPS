@@ -101,6 +101,7 @@
     <Compile Include="blacklist.aspx.designer.cs">
       <DependentUpon>blacklist.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DBConnects.cs" />
     <Compile Include="duplicate.aspx.cs">
       <DependentUpon>duplicate.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

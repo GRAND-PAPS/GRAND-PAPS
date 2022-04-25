@@ -33,6 +33,24 @@ namespace Production
         protected global::System.Web.UI.WebControls.Label usernamelabel;
 
         /// <summary>
+        /// DistrictDropDown control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DistrictDropDown;
+
+        /// <summary>
+        /// dataGridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView dataGridView;
+
+        /// <summary>
         /// bfirstnamelbl control.
         /// </summary>
         /// <remarks>

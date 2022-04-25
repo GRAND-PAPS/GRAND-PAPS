@@ -20,7 +20,9 @@
          <%-- Second Div and headings--%>
         <div class="col-lg-12 row mt-4 w3-margin-16">
             <div class="col-lg-3">
-                <h5 class="text-center">PERSON per DISTRICT</h5>
+                Select District: <asp:DropDownList ID="DistrictDropDown" runat="server" 
+                    DataTextField="Name" DataValueField="DistrictId" />
+                <asp:GridView ID="dataGridView" CssClass="table table-hover" runat="server" />
             </div>
             <div class="col-lg-5">
                 <h5 class="text-center">PERSON INFORMATION</h5>
@@ -85,7 +87,7 @@
                 
                <%-- image for the Person--%>
                 <div class="" style="height:260px;">
-
+                    
                 </div>
                 <div class="w3-margin-24 text-center">
                     <asp:Label ID="blacklistagelbl" runat="server" CssClass="text-info" Font-Bold="true" Font-Size="XX-Large" Text="00"></asp:Label>
