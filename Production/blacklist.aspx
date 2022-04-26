@@ -39,11 +39,11 @@
             <div class="col-lg-5 text-right">
                 <div class="row">
                     <div class="col-lg-2"><asp:RadioButton ID="RadioButton1" CssClass="form-check-input" runat="server" GroupName="Controls" OnCheckedChanged="RadioButton1_CheckedChanged" AutoPostBack="true"/></div>
-                    <div class="col-lg-10"><asp:TextBox ID="Persontextbox" CssClass="form-control form-control-sm" runat="server"></asp:TextBox></div>                   
+                    <div class="col-lg-10"><asp:TextBox ID="Persontextbox" CssClass="form-control form-control-sm" Placeholder="Person ID" runat="server"></asp:TextBox></div>                   
                 </div>
                 <div class="row">
                     <div class="col-lg-2"><asp:RadioButton ID="RadioButton2" CssClass="form-check-input" runat="server" GroupName="Controls" OnCheckedChanged="RadioButton2_CheckedChanged" AutoPostBack="true"/></div>
-                    <div class="col-lg-10"><asp:TextBox ID="Pintextbox" CssClass="form-control form-control-sm" runat="server"></asp:TextBox></div>                    
+                    <div class="col-lg-10"><asp:TextBox ID="Pintextbox" CssClass="form-control form-control-sm" Placeholder="Pin ID" runat="server"></asp:TextBox></div>                    
                 </div>
                 <div class="col-lg-12 w3-margin"><asp:Button ID="blacklistsearchbtn" Text="search" runat="server" CssClass="btn btn-primary btn-block col-sm-3" /></div>                     
             </div>

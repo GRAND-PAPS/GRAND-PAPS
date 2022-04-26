@@ -13,5 +13,15 @@ namespace Production
         {
 
         }
+
+        protected void DuplicateRadioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void DuplicateRadioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
