@@ -29,7 +29,7 @@
                 Select TA:
                 <asp:DropDownList ID="TADropDown" runat="server" DataTextField="Name"
                      DataValueField="TAId" />
-                <asp:GridView ID="dataGridView" CssClass="table table-hover" runat="server" />
+                
             </div>
             <div class="col-lg-5">
                 <h5 class="text-center">PERSON INFORMATION</h5>
@@ -43,7 +43,7 @@
         <div class="col-lg-12 row mt-4 w3-margin-16">
           <%--  Data Grid--%>
             <div class="col-lg-3">
-
+                <asp:GridView ID="dataGridView" CssClass="table table-hover" runat="server" />
             </div>
 
             <%--Person Information after searched--%>
