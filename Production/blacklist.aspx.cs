@@ -86,7 +86,7 @@ namespace Production
         {
             using (SqlConnection con = new SqlConnection(DBConnects.GetConnection()))
             {
-                string query = "select PersonId from Person p join Village v on v.VillageId=p.PlaceOfRegistrationId " +
+                string query = "select PersonId,surname,othernames,firstname from Person p join Village v on v.VillageId=p.PlaceOfRegistrationId " +
                     "join Section s on s.SectionId=v.SectionId join Chiefdom c on c.ChiefdomId=s.ChiefdomId join District d on d.DistrictId=c.DistrictId " +
                     "where RegistrationType=2 and status=285 and c.Name='tsabango'";
                 con.Open();
@@ -102,6 +102,17 @@ namespace Production
                 }
                 con.Close();
             }
+        }
+
+        protected void dataGridView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GridViewRow row = dataGridView.SelectedRow;
+            bfirstnamelbl.Text = row.Cells[1].Text;
+            bothernameslbl.Text = row.Cells[1].Text;
+            bsurnamelbl.Text = row.Cells[1].Text;
+            bDOBlbl.Text = row.Cells[1].Text;
+            bRegistrationlbl.Text = row.Cells[1].Text;
+            bDistrict.Text = row.Cells[1].Text;
         }
     }
 }
