@@ -59,7 +59,7 @@
           <%--  Data Grid--%>
             <div class="col-lg-3">
                 <asp:GridView ID="dataGridView" CssClass="table table-hover" runat="server" Width="10%" CellPadding="4" ForeColor="#333333" 
-                    AutoGenerateSelectButton="true" GridLines="None" AllowPaging="True" >
+                    AutoGenerateSelectButton="true" GridLines="None" AllowPaging="True" OnSelectedIndexChanged="dataGridView_SelectedIndexChanged" >
                     <AlternatingRowStyle BackColor="White"></AlternatingRowStyle>
 
                     <EditRowStyle BackColor="#2461BF"></EditRowStyle>
