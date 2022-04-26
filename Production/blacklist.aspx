@@ -24,11 +24,13 @@
                 Select District: 
                 <asp:DropDownList ID="DistrictDropDown" runat="server" AutoPostBack="true" 
                     DataTextField="Name" DataValueField="DistrictId" 
-                    OnSelectedIndexChanged="DistrictDropDown_SelectedIndexChanged" />
+                    OnSelectedIndexChanged="DistrictDropDown_SelectedIndexChanged">
+                    <asp:ListItem Value="0">SELECT DISTRICT</asp:ListItem>
+                </asp:DropDownList>
                 <br /><br />
                 Select TA:
-                <asp:DropDownList ID="TADropDown" runat="server" DataTextField="Name"
-                     DataValueField="chiefdomid" >
+                <asp:DropDownList ID="TADropDown" runat="server" DataTextField="Name" AutoPostBack="true" 
+                     DataValueField="chiefdomid" OnSelectedIndexChanged="TADropDown_SelectedIndexChanged" >
                     <asp:ListItem Value="0">SELECT TA</asp:ListItem>
                 </asp:DropDownList>
                 
@@ -56,7 +58,30 @@
         <div class="col-lg-12 row mt-4 w3-margin-16">
           <%--  Data Grid--%>
             <div class="col-lg-3">
-                <asp:GridView ID="dataGridView" CssClass="table table-hover" runat="server" />
+                <asp:GridView ID="dataGridView" CssClass="table table-hover" runat="server" Width="10%" CellPadding="4" ForeColor="#333333" 
+                    AutoGenerateSelectButton="true" GridLines="None" AllowPaging="True" >
+                    <AlternatingRowStyle BackColor="White"></AlternatingRowStyle>
+
+                    <EditRowStyle BackColor="#2461BF"></EditRowStyle>
+
+                    <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White"></FooterStyle>
+
+                    <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White"></HeaderStyle>
+
+                    <PagerStyle HorizontalAlign="Center" BackColor="#2461BF" ForeColor="White"></PagerStyle>
+
+                    <RowStyle BackColor="#EFF3FB"></RowStyle>
+
+                    <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333"></SelectedRowStyle>
+
+                    <SortedAscendingCellStyle BackColor="#F5F7FB"></SortedAscendingCellStyle>
+
+                    <SortedAscendingHeaderStyle BackColor="#6D95E1"></SortedAscendingHeaderStyle>
+
+                    <SortedDescendingCellStyle BackColor="#E9EBEF"></SortedDescendingCellStyle>
+
+                    <SortedDescendingHeaderStyle BackColor="#4870BE"></SortedDescendingHeaderStyle>
+                </asp:GridView>
             </div>
 
             <%--Person Information after searched--%>

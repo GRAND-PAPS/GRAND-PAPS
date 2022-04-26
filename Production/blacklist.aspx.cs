@@ -13,7 +13,7 @@ namespace Production
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            if(!Page.IsPostBack)
             {
                 LoadDistrict();
             }
@@ -30,7 +30,7 @@ namespace Production
         }
         public void LoadDistrict()
         {
-            DistrictDropDown.Items.Add("SELECT DISTRICT");
+            //DistrictDropDown.Items.Add("SELECT DISTRICT");
             using (SqlConnection con = new SqlConnection(DBConnects.GetConnection()))
             {
                 string query = "select * from district where districtid>0 order by name";
@@ -52,7 +52,7 @@ namespace Production
         protected void DistrictDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
             //TADropDown.Items.Clear();
-            TADropDown.Items.Add("SELECT TA");
+            //TADropDown.Items.Add("SELECT TA");
 
             using (SqlConnection con = new SqlConnection(DBConnects.GetConnection()))
             {
@@ -80,6 +80,28 @@ namespace Production
         protected void RadioButton2_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void TADropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            using (SqlConnection con = new SqlConnection(DBConnects.GetConnection()))
+            {
+                string query = "select PersonId from Person p join Village v on v.VillageId=p.PlaceOfRegistrationId " +
+                    "join Section s on s.SectionId=v.SectionId join Chiefdom c on c.ChiefdomId=s.ChiefdomId join District d on d.DistrictId=c.DistrictId " +
+                    "where RegistrationType=2 and status=285 and c.Name='tsabango'";
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+                        dataGridView.DataSource = dt;
+                        dataGridView.DataBind();
+                    }
+                }
+                con.Close();
+            }
         }
     }
 }
