@@ -55,10 +55,10 @@
         </div>
 
       <%--Third Div and Person Info--%>
-        <div class="col-lg-12 row mt-4 w3-margin-16">
+        <div class="col-lg-12 row mt-4 w3-margin">
           <%--  Data Grid--%>
             <div class="col-lg-3">
-                <asp:GridView ID="dataGridView" CssClass="table table-hover" runat="server" Width="10%" CellPadding="4" ForeColor="#333333" 
+                <asp:GridView ID="dataGridView" CssClass="table table-hover col-lg-12" runat="server" Width="10%" CellPadding="4" ForeColor="#333333" 
                     AutoGenerateSelectButton="true" GridLines="None" AllowPaging="True" >
                     <AlternatingRowStyle BackColor="White"></AlternatingRowStyle>
 
@@ -113,8 +113,8 @@
                 
                <%-- Blacklist Status--%>
                 <div class="w3-margin-24 text-center">
-                    <asp:Label ID="blacklistedlbi" runat="server" Font-Bold="true" Font-Size="X-Large" Text="Blacklisted" CssClass="text-danger"></asp:Label>
-                    <asp:Label ID="removedblacklistedlbl" runat="server" Font-Bold="true" Font-Size="X-Large" Text="Blacklisted Removed SuccessFully" CssClass="text-success"></asp:Label>
+                    <asp:Label ID="blacklistedlbi" runat="server" Font-Bold="true" Font-Size="X-Large" CssClass="text-danger"></asp:Label>
+                    <asp:Label ID="removedblacklistedlbl" runat="server" Font-Bold="true" Font-Size="X-Large" CssClass="text-success"></asp:Label>
                 </div>
 
                 <%--button for Blacklist and Remove--%>
