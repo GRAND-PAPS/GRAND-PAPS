@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <%--First div and Log in User; search option--%>
-    <div class="col-lg-12">
+    <div class="col-lg-12 w3-margin-16">
         <div class="row">
             <div class="col-lg-3">
 
@@ -15,7 +15,7 @@
                 <asp:Label ID="usernamelabel" CssClass="text-center form-control" Text="APPLICATION USERNAME" Font-Size="Larger" Font-Bold="true" runat="server"></asp:Label>
             </div>
         </div>
-        
+     </div>
 
          <%-- Second Div and headings--%>
         <div class="col-lg-12 row mt-4 w3-margin-16">
@@ -59,10 +59,10 @@
           <%--  Data Grid--%>
             <div class="col-lg-3">
 
-                <asp:GridView ID="dataGridView" CssClass="table table-hover col-lg-12" runat="server" Width="10%" CellPadding="4" ForeColor="#333333" 
-                    AutoGenerateSelectButton="true" GridLines="None" AllowPaging="True" >
+               <%-- <asp:GridView ID="dataGridView" CssClass="table table-hover col-lg-12" runat="server" Width="10%" CellPadding="4" ForeColor="#333333" 
+                    AutoGenerateSelectButton="true" GridLines="None" AllowPaging="True" >--%>
 
-                <asp:GridView ID="dataGridView" CssClass="table table-hover" runat="server" Width="10%" CellPadding="4" ForeColor="#333333" 
+                <asp:GridView ID="dataGridView1" CssClass="table table-hover" runat="server" Width="10%" CellPadding="4" ForeColor="#333333" 
                     AutoGenerateSelectButton="true" GridLines="None" AllowPaging="True" OnSelectedIndexChanged="dataGridView_SelectedIndexChanged" >
 
                     <AlternatingRowStyle BackColor="White"></AlternatingRowStyle>
@@ -146,5 +146,5 @@
             
         </div>
 
-    </div>
+   
 </asp:Content>
