@@ -22,13 +22,15 @@
             <div class="col-lg-3">
 
                 Select District: 
-                <asp:DropDownList ID="DistrictDropDown" runat="server" 
+                <asp:DropDownList ID="DistrictDropDown" runat="server" AutoPostBack="true" 
                     DataTextField="Name" DataValueField="DistrictId" 
                     OnSelectedIndexChanged="DistrictDropDown_SelectedIndexChanged" />
                 <br /><br />
                 Select TA:
                 <asp:DropDownList ID="TADropDown" runat="server" DataTextField="Name"
-                     DataValueField="TAId" />
+                     DataValueField="chiefdomid" >
+                    <asp:ListItem Value="0">SELECT TA</asp:ListItem>
+                </asp:DropDownList>
                 
             </div>
             <%--search section--%>

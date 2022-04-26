@@ -13,7 +13,11 @@ namespace Production
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            LoadDistrict();
+            if(!IsPostBack)
+            {
+                LoadDistrict();
+            }
+            
         }
         public void LoadRecords()
         {
@@ -26,7 +30,7 @@ namespace Production
         }
         public void LoadDistrict()
         {
-            DistrictDropDown.Items.Insert(0, "SELECT DISTRICT");
+            DistrictDropDown.Items.Add("SELECT DISTRICT");
             using (SqlConnection con = new SqlConnection(DBConnects.GetConnection()))
             {
                 string query = "select * from district where districtid>0 order by name";
@@ -47,8 +51,25 @@ namespace Production
 
         protected void DistrictDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TADropDown.Items.Clear();
-            TADropDown.Items.Insert(0, "SELECT TA");
+            //TADropDown.Items.Clear();
+            TADropDown.Items.Add("SELECT TA");
+
+            using (SqlConnection con = new SqlConnection(DBConnects.GetConnection()))
+            {
+                string query = "select * from chiefdom where DistrictId=" + DistrictDropDown.SelectedValue+" order by name";
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+                        TADropDown.DataSource = dt;
+                        TADropDown.DataBind();
+                    }
+                }
+                con.Close();
+            }
         }
 
         protected void RadioButton1_CheckedChanged(object sender, EventArgs e)
