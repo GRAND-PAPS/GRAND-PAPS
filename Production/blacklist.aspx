@@ -58,13 +58,13 @@
         <div class="col-lg-12 row mt-4 w3-margin">
           <%--  Data Grid--%>
             <div class="col-lg-3">
-<<<<<<< HEAD
+
                 <asp:GridView ID="dataGridView" CssClass="table table-hover col-lg-12" runat="server" Width="10%" CellPadding="4" ForeColor="#333333" 
                     AutoGenerateSelectButton="true" GridLines="None" AllowPaging="True" >
-=======
+
                 <asp:GridView ID="dataGridView" CssClass="table table-hover" runat="server" Width="10%" CellPadding="4" ForeColor="#333333" 
                     AutoGenerateSelectButton="true" GridLines="None" AllowPaging="True" OnSelectedIndexChanged="dataGridView_SelectedIndexChanged" >
->>>>>>> 9197f8377b89d642fefeda3e1d18d4ec1e7b37ac
+
                     <AlternatingRowStyle BackColor="White"></AlternatingRowStyle>
 
                     <EditRowStyle BackColor="#2461BF"></EditRowStyle>
