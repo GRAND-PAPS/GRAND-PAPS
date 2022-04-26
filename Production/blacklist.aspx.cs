@@ -50,5 +50,15 @@ namespace Production
             TADropDown.Items.Clear();
             TADropDown.Items.Insert(0, "SELECT TA");
         }
+
+        protected void RadioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void RadioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
