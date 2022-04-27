@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <%--First div and Log in User; search option--%>
-    <div class="col-lg-12">
+    <div class="col-lg-12 w3-margin-16">
         <div class="row">
             <div class="col-lg-3">
 
@@ -15,7 +15,7 @@
                 <asp:Label ID="usernamelabel" CssClass="text-center form-control" Text="APPLICATION USERNAME" Font-Size="Larger" Font-Bold="true" runat="server"></asp:Label>
             </div>
         </div>
-        
+     </div>
 
          <%-- Second Div and headings--%>
         <div class="col-lg-12 row mt-4 w3-margin-16">
@@ -55,11 +55,21 @@
         </div>
 
       <%--Third Div and Person Info--%>
-        <div class="col-lg-12 row mt-4 w3-margin-16">
+        <div class="col-lg-12 row mt-4 w3-margin">
           <%--  Data Grid--%>
             <div class="col-lg-3">
+<<<<<<< HEAD
                 <asp:GridView ID="dataGridView" CssClass="table table-hover" runat="server" Width="5%" Height="50%" CellPadding="3" ForeColor="#333333" 
                     AutoGenerateSelectButton="true" GridLines="None" AllowPaging="True" OnSelectedIndexChanged="dataGridView_SelectedIndexChanged" AllowSorting="True" EnableSortingAndPagingCallbacks="True" EmptyDataText="NO DATA AVAILABLE">
+=======
+
+               <%-- <asp:GridView ID="dataGridView" CssClass="table table-hover col-lg-12" runat="server" Width="10%" CellPadding="4" ForeColor="#333333" 
+                    AutoGenerateSelectButton="true" GridLines="None" AllowPaging="True" >--%>
+
+                <asp:GridView ID="dataGridView1" CssClass="table table-hover" runat="server" Width="10%" CellPadding="4" ForeColor="#333333" 
+                    AutoGenerateSelectButton="true" GridLines="None" AllowPaging="True" OnSelectedIndexChanged="dataGridView_SelectedIndexChanged" >
+
+>>>>>>> 8d67f2a7c2ee300ca3e0c044c1009a9d8e3344fa
                     <AlternatingRowStyle BackColor="White"></AlternatingRowStyle>
 
                     <EditRowStyle BackColor="#2461BF"></EditRowStyle>
@@ -113,8 +123,8 @@
                 
                <%-- Blacklist Status--%>
                 <div class="w3-margin-24 text-center">
-                    <asp:Label ID="blacklistedlbi" runat="server" Font-Bold="true" Font-Size="X-Large" Text="Blacklisted" CssClass="text-danger"></asp:Label>
-                    <asp:Label ID="removedblacklistedlbl" runat="server" Font-Bold="true" Font-Size="X-Large" Text="Blacklisted Removed SuccessFully" CssClass="text-success"></asp:Label>
+                    <asp:Label ID="blacklistedlbi" runat="server" Font-Bold="true" Font-Size="X-Large" CssClass="text-danger"></asp:Label>
+                    <asp:Label ID="removedblacklistedlbl" runat="server" Font-Bold="true" Font-Size="X-Large" CssClass="text-success"></asp:Label>
                 </div>
 
                 <%--button for Blacklist and Remove--%>
@@ -141,5 +151,5 @@
             
         </div>
 
-    </div>
+   
 </asp:Content>
