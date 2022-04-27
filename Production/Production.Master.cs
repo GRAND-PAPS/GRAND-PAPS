@@ -10,9 +10,7 @@ namespace Production
 {
     public partial class Production : System.Web.UI.MasterPage
     {
-        //SqlConnection con = new SqlConnection(@"Data Source=DBC\NRB;Initial Catalog=Inrs;User ID=ApplicationUser;Password=spudR8N2");
-        //SqlConnection con = new SqlConnection(@"Data Source=GRANDPA\GRANDPA;Initial Catalog=INRS2;Integrated Security=True");
-        SqlConnection con = new SqlConnection(@"Data Source=ISSAH\SQLEXPRESS;Initial Catalog=INRS2;Persist Security Info=True;User ID=sa;Password=lengan1");
+        SqlConnection con = new SqlConnection(DBConnects.GetConnection());
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -25,14 +23,15 @@ namespace Production
         {
             con.Open();
             string query = "select COUNT(*) from Person where status=190";
-           // string query = "select COUNT(*) from PersonCard where status=250 and CONVERT(date, DateofIssue,113) = Cast(GETDATE() as date)";
-            SqlCommand command = new SqlCommand(query, con);
-            command.ExecuteNonQuery();
+            // string query = "select COUNT(*) from PersonCard where status=250 and CONVERT(date, DateofIssue,113) = Cast(GETDATE() as date)";
 
-            string regist = command.ExecuteScalar().ToString();
-            int reg = int.Parse(regist);
-            printedtoday.Text = string.Format("{0:0,0}", reg);
+            using (SqlCommand command = new SqlCommand(query, con))
+            {
 
+                string regist = command.ExecuteScalar().ToString();
+                int reg = int.Parse(regist);
+                printedtoday.Text = string.Format("{0:0,0}", reg);
+            }
 
         }
 

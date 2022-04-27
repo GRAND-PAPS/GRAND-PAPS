@@ -30,7 +30,8 @@ namespace Production
         }
         public void LoadDistrict()
         {
-            //DistrictDropDown.Items.Add("SELECT DISTRICT");
+            DistrictDropDown.Items.Clear();
+            DistrictDropDown.Items.Insert(0,"SELECT DISTRICT");
             using (SqlConnection con = new SqlConnection(DBConnects.GetConnection()))
             {
                 string query = "select * from district where districtid>0 order by name";
@@ -51,7 +52,7 @@ namespace Production
 
         protected void DistrictDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //TADropDown.Items.Clear();
+            TADropDown.Items.Clear();
             //TADropDown.Items.Add("SELECT TA");
 
             using (SqlConnection con = new SqlConnection(DBConnects.GetConnection()))
@@ -74,21 +75,33 @@ namespace Production
 
         protected void RadioButton1_CheckedChanged(object sender, EventArgs e)
         {
-
+            Persontextbox.Enabled = true;
+            Pintextbox.Enabled = false;
         }
 
         protected void RadioButton2_CheckedChanged(object sender, EventArgs e)
         {
+            Persontextbox.Enabled = false;
+            Pintextbox.Enabled = true;
+        }
+        void SearchByPersonId()
+        {
+            using(SqlConnection con = new SqlConnection(DBConnects.GetConnection()))
+            {
+                using(SqlCommand command = new SqlCommand("",con))
+                {
 
+                }
+            }
         }
 
         protected void TADropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
             using (SqlConnection con = new SqlConnection(DBConnects.GetConnection()))
             {
-                string query = "select PersonId,surname,othernames,firstname from Person p join Village v on v.VillageId=p.PlaceOfRegistrationId " +
+                string query = "select PersonId,surname,firstname from Person p join Village v on v.VillageId=p.PlaceOfRegistrationId " +
                     "join Section s on s.SectionId=v.SectionId join Chiefdom c on c.ChiefdomId=s.ChiefdomId join District d on d.DistrictId=c.DistrictId " +
-                    "where RegistrationType=2 and status=285 and c.Name='tsabango'";
+                    "where RegistrationType=2 and status=285 and c.Name='"+TADropDown.SelectedItem.ToString()+"'";
                 con.Open();
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {

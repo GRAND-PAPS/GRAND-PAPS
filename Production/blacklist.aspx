@@ -25,7 +25,7 @@
                 <asp:DropDownList ID="DistrictDropDown" runat="server" AutoPostBack="true" 
                     DataTextField="Name" DataValueField="DistrictId" 
                     OnSelectedIndexChanged="DistrictDropDown_SelectedIndexChanged">
-                    <asp:ListItem Value="0">SELECT DISTRICT</asp:ListItem>
+                    <%--<asp:ListItem Value="0">SELECT DISTRICT</asp:ListItem>--%>
                 </asp:DropDownList>
                 <br /><br />
                 Select TA:
@@ -39,11 +39,11 @@
             <div class="col-lg-5 text-right">
                 <div class="row">
                     <div class="col-lg-2"><asp:RadioButton ID="RadioButton1" CssClass="form-check-input" runat="server" GroupName="Controls" OnCheckedChanged="RadioButton1_CheckedChanged" AutoPostBack="true"/></div>
-                    <div class="col-lg-10"><asp:TextBox ID="Persontextbox" CssClass="form-control form-control-sm" Placeholder="Person ID" runat="server"></asp:TextBox></div>                   
+                    <div class="col-lg-10"><asp:TextBox ID="Persontextbox" Enabled="false" CssClass="form-control form-control-sm" Placeholder="Person ID" runat="server"></asp:TextBox></div>                   
                 </div>
                 <div class="row">
                     <div class="col-lg-2"><asp:RadioButton ID="RadioButton2" CssClass="form-check-input" runat="server" GroupName="Controls" OnCheckedChanged="RadioButton2_CheckedChanged" AutoPostBack="true"/></div>
-                    <div class="col-lg-10"><asp:TextBox ID="Pintextbox" CssClass="form-control form-control-sm" Placeholder="Pin ID" runat="server"></asp:TextBox></div>                    
+                    <div class="col-lg-10"><asp:TextBox ID="Pintextbox" Enabled="false" CssClass="form-control form-control-sm" Placeholder="Pin ID" runat="server"></asp:TextBox></div>                    
                 </div>
                 <div class="col-lg-12 w3-margin"><asp:Button ID="blacklistsearchbtn" Text="search" runat="server" CssClass="btn btn-primary btn-block col-sm-3" /></div>                     
             </div>
@@ -58,8 +58,8 @@
         <div class="col-lg-12 row mt-4 w3-margin-16">
           <%--  Data Grid--%>
             <div class="col-lg-3">
-                <asp:GridView ID="dataGridView" CssClass="table table-hover" runat="server" Width="10%" CellPadding="4" ForeColor="#333333" 
-                    AutoGenerateSelectButton="true" GridLines="None" AllowPaging="True" OnSelectedIndexChanged="dataGridView_SelectedIndexChanged" >
+                <asp:GridView ID="dataGridView" CssClass="table table-hover" runat="server" Width="5%" Height="50%" CellPadding="3" ForeColor="#333333" 
+                    AutoGenerateSelectButton="true" GridLines="None" AllowPaging="True" OnSelectedIndexChanged="dataGridView_SelectedIndexChanged" AllowSorting="True" EnableSortingAndPagingCallbacks="True" EmptyDataText="NO DATA AVAILABLE">
                     <AlternatingRowStyle BackColor="White"></AlternatingRowStyle>
 
                     <EditRowStyle BackColor="#2461BF"></EditRowStyle>
@@ -85,7 +85,7 @@
             </div>
 
             <%--Person Information after searched--%>
-            <div class="col-lg-5">
+            <div class="col-lg-4">
                 <div class="w3-margin-12">
                         <label class="m5">Firstname:</label>
                         <asp:Label ID="bfirstnamelbl" CssClass="" runat="server" Font-Bold="true" Font-Size="Larger" Font-Italic="true" Text="MMMM"></asp:Label>
