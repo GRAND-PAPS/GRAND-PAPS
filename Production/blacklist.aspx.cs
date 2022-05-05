@@ -99,7 +99,6 @@ namespace Production
         {
             using (SqlConnection con = new SqlConnection(DBConnects.GetConnection()))
             {
-               // string query = "select PersonId,surname,firstname from Person p join Village v on v.VillageId=p.PlaceOfRegistrationId " +
                 string query = "select PersonId,surname from Person p join Village v on v.VillageId=p.PlaceOfRegistrationId " +
                     "join Section s on s.SectionId=v.SectionId join Chiefdom c on c.ChiefdomId=s.ChiefdomId join District d on d.DistrictId=c.DistrictId " +
                     "where RegistrationType=2 and status=285 and c.Name='"+TADropDown.SelectedItem.ToString()+"'";

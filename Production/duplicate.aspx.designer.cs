@@ -15,24 +15,6 @@ namespace Production
     {
 
         /// <summary>
-        /// DuplicateRadioButton1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton DuplicateRadioButton1;
-
-        /// <summary>
-        /// duplicateidtextbox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox duplicateidtextbox;
-
-        /// <summary>
         /// DuplicateRadioButton2 control.
         /// </summary>
         /// <remarks>
@@ -51,6 +33,24 @@ namespace Production
         protected global::System.Web.UI.WebControls.TextBox Personidtextbox;
 
         /// <summary>
+        /// DuplicateRadioButton1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton DuplicateRadioButton1;
+
+        /// <summary>
+        /// duplicateidtextbox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox duplicateidtextbox;
+
+        /// <summary>
         /// duplicatebtn control.
         /// </summary>
         /// <remarks>
@@ -58,5 +58,14 @@ namespace Production
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button duplicatebtn;
+
+        /// <summary>
+        /// ResultGridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView ResultGridView;
     }
 }
