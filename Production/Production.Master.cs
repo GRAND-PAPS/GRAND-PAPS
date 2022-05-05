@@ -10,13 +10,10 @@ namespace Production
 {
     public partial class Production : System.Web.UI.MasterPage
     {
-<<<<<<< HEAD
         SqlConnection con = new SqlConnection(DBConnects.GetConnection());
-=======
         //SqlConnection con = new SqlConnection(@"Data Source=DBC\NRB;Initial Catalog=Inrs;User ID=ApplicationUser;Password=spudR8N2");
-        SqlConnection con = new SqlConnection(@"Data Source=GRANDPA\GRANDPA;Initial Catalog=INRS2;Integrated Security=True");
+        //SqlConnection con = new SqlConnection(@"Data Source=GRANDPA\GRANDPA;Initial Catalog=INRS2;Integrated Security=True");
         //SqlConnection con = new SqlConnection(@"Data Source=ISSAH\SQLEXPRESS;Initial Catalog=INRS2;Persist Security Info=True;User ID=sa;Password=lengan1");
->>>>>>> 8d67f2a7c2ee300ca3e0c044c1009a9d8e3344fa
 
         protected void Page_Load(object sender, EventArgs e)
         {

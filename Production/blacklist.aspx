@@ -38,11 +38,13 @@
             <%--search section--%>
             <div class="col-lg-5 text-right">
                 <div class="row">
-                    <div class="col-lg-2"><asp:RadioButton ID="RadioButton1" CssClass="form-check-input" runat="server" GroupName="Controls" OnCheckedChanged="RadioButton1_CheckedChanged" AutoPostBack="true"/></div>
+                    <div class="col-lg-2"><asp:RadioButton ID="RadioButton1" CssClass="form-check-input" runat="server" GroupName="Controls" 
+                        OnCheckedChanged="RadioButton1_CheckedChanged" AutoPostBack="true"/></div>
                     <div class="col-lg-10"><asp:TextBox ID="Persontextbox" Enabled="false" CssClass="form-control form-control-sm" Placeholder="Person ID" runat="server"></asp:TextBox></div>                   
                 </div>
                 <div class="row">
-                    <div class="col-lg-2"><asp:RadioButton ID="RadioButton2" CssClass="form-check-input" runat="server" GroupName="Controls" OnCheckedChanged="RadioButton2_CheckedChanged" AutoPostBack="true"/></div>
+                    <div class="col-lg-2"><asp:RadioButton ID="RadioButton2" CssClass="form-check-input" runat="server" GroupName="Controls" 
+                        OnCheckedChanged="RadioButton2_CheckedChanged" AutoPostBack="true"/></div>
                     <div class="col-lg-10"><asp:TextBox ID="Pintextbox" Enabled="false" CssClass="form-control form-control-sm" Placeholder="Pin ID" runat="server"></asp:TextBox></div>                    
                 </div>
                 <div class="col-lg-12 w3-margin"><asp:Button ID="blacklistsearchbtn" Text="search" runat="server" CssClass="btn btn-primary btn-block col-sm-3" /></div>                     
@@ -56,20 +58,12 @@
 
       <%--Third Div and Person Info--%>
         <div class="col-lg-12 row mt-4 w3-margin">
-          <%--  Data Grid--%>
-            <div class="col-lg-3">
-<<<<<<< HEAD
-                <asp:GridView ID="dataGridView" CssClass="table table-hover" runat="server" Width="5%" Height="50%" CellPadding="3" ForeColor="#333333" 
-                    AutoGenerateSelectButton="true" GridLines="None" AllowPaging="True" OnSelectedIndexChanged="dataGridView_SelectedIndexChanged" AllowSorting="True" EnableSortingAndPagingCallbacks="True" EmptyDataText="NO DATA AVAILABLE">
-=======
+        
 
-               <%-- <asp:GridView ID="dataGridView" CssClass="table table-hover col-lg-12" runat="server" Width="10%" CellPadding="4" ForeColor="#333333" 
-                    AutoGenerateSelectButton="true" GridLines="None" AllowPaging="True" >--%>
 
                 <asp:GridView ID="dataGridView1" CssClass="table table-hover" runat="server" Width="10%" CellPadding="4" ForeColor="#333333" 
                     AutoGenerateSelectButton="true" GridLines="None" AllowPaging="True" OnSelectedIndexChanged="dataGridView_SelectedIndexChanged" >
 
->>>>>>> 8d67f2a7c2ee300ca3e0c044c1009a9d8e3344fa
                     <AlternatingRowStyle BackColor="White"></AlternatingRowStyle>
 
                     <EditRowStyle BackColor="#2461BF"></EditRowStyle>
