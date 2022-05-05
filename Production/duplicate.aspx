@@ -24,12 +24,10 @@
 
        <%--Search results--%>
     <div class="col-lg-12">
-       <div class="col-lg-12">
-            
-            <asp:GridView ID="ResultGridView" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Width="113%">
-                <AlternatingRowStyle BackColor="White"></AlternatingRowStyle>
+        <div class="col-lg-6 w3-margin">
 
-                <EditRowStyle BackColor="#2461BF"></EditRowStyle>
+        </div>
+        <div class="col-lg-6 w3-margin">
 
                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White"></FooterStyle>
 
