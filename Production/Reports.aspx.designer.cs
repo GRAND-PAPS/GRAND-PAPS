@@ -15,39 +15,12 @@ namespace Production
     {
 
         /// <summary>
-        /// weeklyreportbtn control.
+        /// drpreportType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button weeklyreportbtn;
-
-        /// <summary>
-        /// monthlyreportbtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button monthlyreportbtn;
-
-        /// <summary>
-        /// reportsearch control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox reportsearch;
-
-        /// <summary>
-        /// reportsearchbtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button reportsearchbtn;
+        protected global::System.Web.UI.WebControls.DropDownList drpreportType;
     }
 }
