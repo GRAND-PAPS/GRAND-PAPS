@@ -49,13 +49,35 @@
             <%--<asp:Button ID="reportsearchbtn" runat="server" CssClass="btn btn-md btn-primary" Text="SEARCH" />--%>
         </div>    
         <div class="col-lg-2">
-            <asp:Button Text="Load" runat="server" ID="btnLoad" CssClass="btn btn-primary" />
+            <asp:Button Text="Load" runat="server" ID="btnLoad" CssClass="btn btn-primary" OnClick="btnLoad_Click" />
         </div>
     </div>
 
  <%--main Grid Div results--%>
     <div class="w3-margin-top">
-        <asp:GridView ID="gridResult" runat="server" />
+        <asp:GridView ID="gridResult" runat="server" CellPadding="4" ForeColor="#333333" GridLines="Both" BorderStyle="Double">
+            <AlternatingRowStyle BackColor="White"></AlternatingRowStyle>
+
+            <EditRowStyle BackColor="#2461BF"></EditRowStyle>
+
+            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White"></FooterStyle>
+
+            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White"></HeaderStyle>
+
+            <PagerStyle HorizontalAlign="Center" BackColor="#2461BF" ForeColor="White"></PagerStyle>
+
+            <RowStyle BackColor="#EFF3FB"></RowStyle>
+
+            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333"></SelectedRowStyle>
+
+            <SortedAscendingCellStyle BackColor="#F5F7FB"></SortedAscendingCellStyle>
+
+            <SortedAscendingHeaderStyle BackColor="#6D95E1"></SortedAscendingHeaderStyle>
+
+            <SortedDescendingCellStyle BackColor="#E9EBEF"></SortedDescendingCellStyle>
+
+            <SortedDescendingHeaderStyle BackColor="#4870BE"></SortedDescendingHeaderStyle>
+        </asp:GridView>
     </div>
 
 

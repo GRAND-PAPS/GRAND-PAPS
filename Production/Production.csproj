@@ -130,6 +130,11 @@
     <Compile Include="manifest.aspx.designer.cs">
       <DependentUpon>manifest.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Model\BlackListData.cs" />
+    <Compile Include="Model\DuplicateData.cs" />
+    <Compile Include="Model\PrintingData.cs" />
+    <Compile Include="Model\RegistrationData.cs" />
+    <Compile Include="Model\SynchronisationData.cs" />
     <Compile Include="Production.Master.cs">
       <DependentUpon>Production.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

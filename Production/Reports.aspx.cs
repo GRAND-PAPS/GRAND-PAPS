@@ -4,11 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Production.Model;
 
 namespace Production
 {
     public partial class Reports : System.Web.UI.Page
     {
+        RegistrationData regdata = new RegistrationData();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -56,6 +58,12 @@ namespace Production
             rd1.Visible = false;
             rd2.Visible = false;
 
+        }
+
+        protected void btnLoad_Click(object sender, EventArgs e)
+        {
+            gridResult.DataSource = regdata.GetregistrationByDate(StartDate.Text, EndDate.Text);
+            gridResult.DataBind();
         }
     }
 }
