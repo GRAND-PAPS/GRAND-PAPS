@@ -18,16 +18,12 @@ namespace Production
 
         protected void drpreportType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //result = x > y ? "x is greater than y" : "x is less than y";
-
-            //drpreportType.Text != "SELECT REPORT TYPE" ?{ DIsplay(); }: { hideDetails(); }
-
+            
             if (drpreportType.Text != "SELECT REPORT TYPE")
             {
                 DIsplay();
             }
             else { hideDetails(); }
-            //lblStartDate.Text = drpreportType.Text;
         }
         void DIsplay()
         {
@@ -45,7 +41,8 @@ namespace Production
             }
             else if(drpreportType.Text== "REGISTRATION REPORTS")
             {
-                rd1.Text = "By District";
+                //rd1.Text = "By District";
+                rd1.Visible = false;
                 rd2.Text = "By Gender";
             }
         }
