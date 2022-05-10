@@ -46,8 +46,54 @@ namespace Production
                     {
                         DataTable dt = new DataTable();
                         da.Fill(dt);
-                        ResultGridView.DataSource = dt;
-                        ResultGridView.DataBind();
+                        if (dt.Rows.Count > 0)
+                        {
+                            ResultGridView.DataSource = dt;
+                            ResultGridView.DataBind();
+                        }
+                        else if (dt.Rows.Count == 0)
+                        {
+                            dt = null;
+                            ResultGridView.DataSource = dt;
+                            ResultGridView.DataBind();
+
+                            lblStatus.Text = "No Data Available";
+                        }
+                        //else if(dt.Rows.Count<0)
+                        //{
+                        //    foreach(GridViewRow gvr in ResultGridView.Rows)
+                        //    {
+                        //        DataRow dr = dt.NewRow();
+                        //        dr["Personid"] = gvr.Cells[0].Text;
+                        //        dr["Surname"] = gvr.Cells[1].Text;
+                        //        dr["Othernames"] = gvr.Cells[2].Text;
+                        //        dr["Firstname"] = gvr.Cells[3].Text;
+                        //        dr["ApplicantDateofRegistration"] = DateTime.Parse( gvr.Cells[4].Text);
+                        //        dr["DuplicateId"] = gvr.Cells[5].Text;
+                        //        dr["DuplicateSurname"] = gvr.Cells[6].Text;
+                        //        dr["DuplicateOthernames"] = gvr.Cells[7].Text;
+                        //        dr["DuplicateFirstname"] = gvr.Cells[8].Text;
+                        //        dr["DuplicateDateofRegistration"] = gvr.Cells[9].Text;
+                        //        dt.Rows.Add(dr);
+
+
+                        //    }
+                        //    DataRow drn = dt.NewRow();
+                        //    drn["Personid"] = 0;
+                        //    drn["Surname"] = 0;
+                        //    drn["Othernames"] = 0;
+                        //    drn["Firstname"] = 0;
+                        //    drn["ApplicantDateofRegistration"] = DateTime.Now;
+                        //    drn["DuplicateId"] = 0;
+                        //    drn["DuplicateSurname"] = 0;
+                        //    drn["DuplicateOthernames"] = 0;
+                        //    drn["DuplicateFirstname"] = 0;
+                        //    drn["DuplicateDateofRegistration"] = DateTime.Now;
+
+                        //    dt.Rows.Add(drn);
+                        //    ResultGridView.DataSource = dt;
+                        //    ResultGridView.DataBind();
+                        //}
                     }
                 }
                 con.Close();

@@ -24,11 +24,8 @@
 
        <%--Search results--%>
     <div class="col-lg-12">
-        <div class="col-lg-6 w3-margin">
-
-        </div>
-        <div class="col-lg-6 w3-margin">
-
-        </div>--%>
+        <center><asp:Label ID="lblStatus" Font-Bold="true" runat="server" Text="" /></center>
+        
+       <asp:GridView ID="ResultGridView"  runat="server" />
     </div>
 </asp:Content>

@@ -62,5 +62,17 @@ namespace Production
             gridResult.DataSource = regdata.GetregistrationByDate(StartDate.Text, EndDate.Text);
             gridResult.DataBind();
         }
+        void DisplayData()
+        {
+            if(drpreportType.Text== "REGISTRATION REPORTS")
+            {
+                if (rd2.Checked == true) { regdata.GetRegistrationByGender(StartDate.Text, EndDate.Text); }
+                else if (rd2.Checked == false) { regdata.GetregistrationByDate(StartDate.Text,EndDate.Text); }
+            }
+            else if(drpreportType.Text== "PRINTING REPORT")
+            {
+                
+            }
+        }
     }
 }

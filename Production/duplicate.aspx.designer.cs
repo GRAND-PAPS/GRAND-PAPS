@@ -60,6 +60,15 @@ namespace Production
         protected global::System.Web.UI.WebControls.Button duplicatebtn;
 
         /// <summary>
+        /// lblStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblStatus;
+
+        /// <summary>
         /// ResultGridView control.
         /// </summary>
         /// <remarks>
