@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Production.Model;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -120,12 +122,87 @@ namespace Production
         protected void dataGridView_SelectedIndexChanged(object sender, EventArgs e)
         {
             GridViewRow row = dataGridView1.SelectedRow;
-            bfirstnamelbl.Text = row.Cells[1].Text;
-            bothernameslbl.Text = row.Cells[1].Text;
-            bsurnamelbl.Text = row.Cells[1].Text;
-            bDOBlbl.Text = row.Cells[1].Text;
-            bRegistrationlbl.Text = row.Cells[1].Text;
-            bDistrict.Text = row.Cells[1].Text;
+            BlackListData bd = new BlackListData();
+
+            string query = "select p.PersonId, FirstName,OtherNames,Surname,DateOfBirth,DateOfRegistration,d.Name as District, (select Blob from PersonBlob pb where Type=16 and pb.PersonId=p.PersonId ) as Photo " +
+                "from Person p join Village v on v.VillageId=p.PlaceOfRegistrationId join Section s on s.SectionId=v.SectionId join Chiefdom c on c.ChiefdomId=s.ChiefdomId join District d on d.DistrictId=c.DistrictId " +
+                "where Status=285 and PersonId='" + row.Cells[1].Text + "'";
+
+            using (SqlConnection con = new SqlConnection(DBConnects.GetConnection()))
+            {
+                //int id = int.Parse(row.Cells[0].Text);
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        DataTable data = new DataTable();
+                        adapter.Fill(data);
+
+                        bfirstnamelbl.Text = data.Rows[0]["firstname"].ToString();
+                        bothernameslbl.Text = data.Rows[0]["othernames"].ToString();
+                        bsurnamelbl.Text = data.Rows[0]["Surname"].ToString();
+                        bDOBlbl.Text = data.Rows[0]["DateOfBirth"].ToString();
+                        bRegistrationlbl.Text = data.Rows[0]["DateOfRegistration"].ToString();
+                        bDistrict.Text = data.Rows[0]["District"].ToString();
+
+
+
+                        //string id = data.Rows[0]["PersonId"].ToString();
+                        string id = "50865";
+                        Bpicture.Visible = id != "0";
+                        if (id != "0")
+                        {
+                            byte[] bytes = (byte[])GetData("SELECT top 1 blob FROM personblob WHERE Type=17 and PersonId =" + id).Rows[0]["blob"];
+                            string base64String = Convert.ToBase64String(bytes, 0, bytes.Length);
+                            Bpicture.ImageUrl = "data:image/png;base64," + base64String;
+                        }
+
+                        //byte[] imagem = (byte[])(data.Rows[0]["Photo"]);
+                        //MemoryStream ms = new MemoryStream(imagem);
+
+                        //if(imagem.Length!=0)
+                        //{
+                        //    string PROFILE_PIC = Convert.ToBase64String(imagem);
+
+                        //    Bpicture.ImageUrl = String.Format("data:image/jpg;base64,{0}", PROFILE_PIC);
+                        //}
+                        //else { removedblacklistedlbl.Text = "Unable to Load Photo"; }
+
+
+                        //byte[] img = (byte[])data.Rows[0]["Photo"];
+                        //MemoryStream ms = new MemoryStream(img);
+
+                        //Bpicture.ImageUrl = Image.FromStream(ms);
+
+                        //adapter.Dispose();
+
+                    }
+                }
+            }
+        }
+        private DataTable GetData(string query)
+        {
+            DataTable dt = new DataTable();
+            //string constr = ConfigurationManager.ConnectionStrings["constr"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(DBConnects.GetConnection()))
+            {
+                using (SqlCommand cmd = new SqlCommand(query))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter())
+                    {
+                        cmd.CommandType = CommandType.Text;
+                        cmd.Connection = con;
+                        sda.SelectCommand = cmd;
+                        sda.Fill(dt);
+                    }
+                }
+                return dt;
+            }
+        }
+        protected void dataGridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            dataGridView1.PageIndex = e.NewPageIndex;
+            this.TADropDown_SelectedIndexChanged(sender, e);
         }
     }
 }

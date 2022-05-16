@@ -90,5 +90,23 @@ namespace Production.Model
             }
             return dataTable;
         }
+        public DataTable GetTodaysClearedDuplicates(string TodaysDate)
+        {
+            DataTable dt = new DataTable();
+            string query = "";
+            using(SqlConnection con = new SqlConnection(DBConnects.GetConnection()))
+            {
+                con.Open();
+                using(SqlCommand cmd = new SqlCommand(query,con))
+                {
+                    using(SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        adapter.Fill(dt);
+                    }
+                }
+                con.Close();
+            }
+            return dt;
+        }
     }
 }

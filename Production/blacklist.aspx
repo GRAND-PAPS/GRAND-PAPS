@@ -57,13 +57,13 @@
       <%--Third Div and Person Info--%>
         <div class="col-lg-12 row mt-4 w3-margin">
           <%--  Data Grid--%>
-            <div class="col-lg-3">
+            <div class="col-lg-4">
 
                <%-- <asp:GridView ID="dataGridView" CssClass="table table-hover col-lg-12" runat="server" Width="10%" CellPadding="4" ForeColor="#333333" 
                     AutoGenerateSelectButton="true" GridLines="None" AllowPaging="True" >--%>
 
                 <asp:GridView ID="dataGridView1" CssClass="table table-hover" runat="server" Width="10%" CellPadding="4" ForeColor="#333333" 
-                    AutoGenerateSelectButton="true" GridLines="None" AllowPaging="True" OnSelectedIndexChanged="dataGridView_SelectedIndexChanged" >
+                    AutoGenerateSelectButton="true" GridLines="None" AllowPaging="True" OnSelectedIndexChanged="dataGridView_SelectedIndexChanged" OnPageIndexChanging="dataGridView1_PageIndexChanging" >
 
                     <AlternatingRowStyle BackColor="White"></AlternatingRowStyle>
 
@@ -91,35 +91,84 @@
 
             <%--Person Information after searched--%>
             <div class="col-lg-4">
-                <div class="w3-margin-12">
+                <div class="col-lg-12">
+                    <div class="col-lg-7">
+                        <label class="m5">Personal ID:</label>
+                    </div>
+                    <div class="col-lg-5">
+                        <asp:Label ID="PersonID" CssClass="" runat="server" Font-Bold="true" Font-Size="Larger" Font-Italic="true" Text="MMMM"></asp:Label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="col-lg-7">
+                        <label class="m5">ID Number:</label>
+                    </div>
+                    <div class="col-lg-5">
+                         <asp:Label ID="PIN" CssClass="" runat="server" Font-Bold="true" Font-Size="Larger" Font-Italic="true" Text="MMMM"></asp:Label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="col-lg-7">
                         <label class="m5">Firstname:</label>
+                    </div>
+                    <div class="col-lg-5">
                         <asp:Label ID="bfirstnamelbl" CssClass="" runat="server" Font-Bold="true" Font-Size="Larger" Font-Italic="true" Text="MMMM"></asp:Label>
+                    </div>
                 </div>
-                <div class="w3-margin-12">
+                <div class="col-lg-12">
+                    <div class="col-lg-7">
                         <label class="m5">Othernames:</label>
+                    </div>
+                    <div class="col-lg-5">
                         <asp:Label ID="bothernameslbl" CssClass="" runat="server" Font-Bold="true" Font-Size="Larger" Font-Italic="true" Text="SSSS"></asp:Label>
+                    </div>
                 </div>
-                <div class="w3-margin-12">
+                <div class="col-lg-12">
+                    <div class="col-lg-7">
                         <label class="m5">Surname:</label>
+                    </div>
+                    <div class="col-lg-5">
                         <asp:Label ID="bsurnamelbl" CssClass="" runat="server" Font-Bold="true" Font-Size="Larger" Font-Italic="true" Text="SSSS"></asp:Label>
+                    </div>
                 </div>
-                <div class="w3-margin-12">
+                <div class="col-lg-12">
+                    <div class="col-lg-7">
                         <label class="m5">Date Of Birth:</label>
+                    </div>
+                    <div class="col-lg-5">
                         <asp:Label ID="bDOBlbl" CssClass="" runat="server" Font-Bold="true" Font-Size="Larger" Font-Italic="true" Text="MMMM"></asp:Label>
+                    </div>
                 </div>
-                <div class="w3-margin-12">
+                <div class="col-lg-12">
+                    <div class="col-lg-7">
                         <label class="m5">Date Of Registration:</label>
+                    </div>
+                    <div class="col-lg-5">
                         <asp:Label ID="bRegistrationlbl" CssClass="" runat="server" Font-Bold="true" Font-Size="Larger" Font-Italic="true" Text="SSSS"></asp:Label>
+                    </div>
                 </div>
-                <div class="w3-margin-12">
+                <div class="col-lg-12">
+                    <div class="col-lg-7">
                         <label class="m5">Distric:</label>
+                    </div>
+                    <div class="col-lg-5">
                         <asp:Label ID="bDistrict" CssClass="" runat="server" Font-Bold="true" Font-Size="Larger" Font-Italic="true" Text="SSSS"></asp:Label>
+                    </div>
                 </div>
+                <div class="col-lg-12">
+                    <div class="col-lg-5">
+                        <asp:Label ID="blacklistedlbi" runat="server" Font-Bold="true" Font-Size="X-Large" CssClass="text-danger"></asp:Label>
+                    </div>
+                    <div class="col-lg-7">
+                        <asp:Label ID="removedblacklistedlbl" runat="server" Font-Bold="true" Font-Size="X-Large" CssClass="text-success right"></asp:Label>
+                    </div>
+                </div>
+               
                 
                <%-- Blacklist Status--%>
                 <div class="w3-margin-24 text-center">
-                    <asp:Label ID="blacklistedlbi" runat="server" Font-Bold="true" Font-Size="X-Large" CssClass="text-danger"></asp:Label>
-                    <asp:Label ID="removedblacklistedlbl" runat="server" Font-Bold="true" Font-Size="X-Large" CssClass="text-success"></asp:Label>
+                    
+                    
                 </div>
 
                 <%--button for Blacklist and Remove--%>
@@ -131,17 +180,16 @@
                         <asp:Button ID="removeblacklistbtn" runat="server" CssClass="btn btn-success" Text="REMOVE BLACKLIST" />
                     </div>
                 </div>
-
             </div>
             <div class="col-lg-4">
-                
+                <asp:Image ID="Bpicture" runat="server" BorderColor="Blue" Width="70%" Height="100%" />
                <%-- image for the Person--%>
-                <div class="" style="height:260px;">
+                <%--<div class="" style="height:260px;">
                     
-                </div>
-                <div class="w3-margin-24 text-center">
+                </div>--%>
+                <%--<div class="w3-margin-24 text-center">
                     <asp:Label ID="blacklistagelbl" runat="server" CssClass="text-info" Font-Bold="true" Font-Size="XX-Large" Text="00"></asp:Label>
-                </div>
+                </div>--%>
             </div>
             
         </div>
