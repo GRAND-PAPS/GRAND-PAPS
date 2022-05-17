@@ -105,13 +105,13 @@ namespace Production
         protected global::System.Web.UI.WebControls.GridView dataGridView1;
 
         /// <summary>
-        /// PersonID control.
+        /// lblPersonID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PersonID;
+        protected global::System.Web.UI.WebControls.Label lblPersonID;
 
         /// <summary>
         /// PIN control.
@@ -220,5 +220,14 @@ namespace Production
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image Bpicture;
+
+        /// <summary>
+        /// blacklistagelbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label blacklistagelbl;
     }
 }

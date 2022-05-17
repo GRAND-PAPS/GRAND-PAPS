@@ -138,6 +138,7 @@ namespace Production
                         DataTable data = new DataTable();
                         adapter.Fill(data);
 
+                        lblPersonID.Text = data.Rows[0]["Personid"].ToString();
                         bfirstnamelbl.Text = data.Rows[0]["firstname"].ToString();
                         bothernameslbl.Text = data.Rows[0]["othernames"].ToString();
                         bsurnamelbl.Text = data.Rows[0]["Surname"].ToString();
@@ -156,25 +157,6 @@ namespace Production
                             string base64String = Convert.ToBase64String(bytes, 0, bytes.Length);
                             Bpicture.ImageUrl = "data:image/png;base64," + base64String;
                         }
-
-                        //byte[] imagem = (byte[])(data.Rows[0]["Photo"]);
-                        //MemoryStream ms = new MemoryStream(imagem);
-
-                        //if(imagem.Length!=0)
-                        //{
-                        //    string PROFILE_PIC = Convert.ToBase64String(imagem);
-
-                        //    Bpicture.ImageUrl = String.Format("data:image/jpg;base64,{0}", PROFILE_PIC);
-                        //}
-                        //else { removedblacklistedlbl.Text = "Unable to Load Photo"; }
-
-
-                        //byte[] img = (byte[])data.Rows[0]["Photo"];
-                        //MemoryStream ms = new MemoryStream(img);
-
-                        //Bpicture.ImageUrl = Image.FromStream(ms);
-
-                        //adapter.Dispose();
 
                     }
                 }
@@ -202,6 +184,37 @@ namespace Production
         protected void dataGridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             dataGridView1.PageIndex = e.NewPageIndex;
+            this.TADropDown_SelectedIndexChanged(sender, e);
+        }
+
+        protected void Blacklistbtn_Click(object sender, EventArgs e)
+        {
+            BlackListData blackListData = new BlackListData();
+            using(SqlConnection con = new SqlConnection(DBConnects.GetConnection()))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand(blackListData.SendToBlackList(lblPersonID.Text), con))
+                {
+                    cmd.ExecuteNonQuery();
+                    blacklistagelbl.Text = lblPersonID.Text + " Succesfully blacklisted";
+                }
+                con.Close();
+            }
+        }
+
+        protected void removeblacklistbtn_Click(object sender, EventArgs e)
+        {
+            BlackListData blackListData = new BlackListData();
+            using (SqlConnection con = new SqlConnection(DBConnects.GetConnection()))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand(blackListData.RemoveBlackList(lblPersonID.Text), con))
+                {
+                    cmd.ExecuteNonQuery();
+                    blacklistagelbl.Text = lblPersonID.Text + " Succesfully Removed from blacklisted";
+                }
+                con.Close();
+            }
             this.TADropDown_SelectedIndexChanged(sender, e);
         }
     }

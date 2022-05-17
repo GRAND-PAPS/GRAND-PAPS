@@ -7,33 +7,39 @@ using System.Data;
 
 namespace Production.Model
 {
+    
     public class BlackListData
     {
-        public DataTable GetBlackListedData(int personid)
+        public string SendToBlackList(string personid)
+        {
+            string edituser = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+            string query = "update person set status = 285 where personid = '" + personid + "' insert into blacklist(PersonId, Pin, Surname, OtherNames, FirstName, DateOfBirth, Sex, " +
+                "DateOfRegistration, Telephone, Receipt, Status, EditUser, EditMachine, FirstApprover, SecondAprover, DateOfEdit) select PersonId, Pin, Surname, OtherNames, FirstName, " +
+                "DateOfBirth, Sex, DateOfRegistration, Telephone, Receipt,110,'" + edituser + "',EditMachine,'','',getdate() from Person where personid = '" + personid + "'";
+            return query;
+        }
+        public string RemoveBlackList(string personid)
+        {
+            string edituser = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+            string query = "update person set status=110 where personid='" + personid + "' insert into blacklist(PersonId,Pin,Surname,OtherNames,FirstName,DateOfBirth,Sex," +
+                "DateOfRegistration,Telephone,Receipt,Status,EditUser,EditMachine,FirstApprover,SecondAprover,DateOfEdit) select PersonId,Pin,Surname,OtherNames,FirstName," +
+                "DateOfBirth,Sex,DateOfRegistration,Telephone,Receipt,110,'" + edituser + "',EditMachine,'','',getdate() from Person where personid ='" + personid + "'";
+            return query;
+        }
+        public DataTable GetValuesByPeronid(string personid)
         {
             DataTable dataTable = new DataTable();
-            
+            string query = "select Receipt,Pin,Surname,FirstName,OtherNames,DateOfBirth,DateOfRegistration,d.Name as District,c.Name as TA, v.Name as Village,Personid from Person p " +
+                "join Village v on v.VillageId=p.PlaceOfRegistrationId join Section s on s.SectionId=v.SectionId join Chiefdom c on c.ChiefdomId=s.ChiefdomId join District d on " +
+                "d.DistrictId=c.DistrictId where RegistrationType=2 and Personid='" + personid + "'";
             using(SqlConnection con = new SqlConnection(DBConnects.GetConnection()))
             {
-                con.Open();
-                using(SqlCommand cmd = new SqlCommand(GetBlackListDataQuery(personid), con))
+                using(SqlCommand cmd = new SqlCommand())
                 {
-                    using(SqlDataAdapter adapter = new SqlDataAdapter(cmd))
-                    {
-                        adapter.Fill(dataTable);
-                    }
+
                 }
-                con.Close();
             }
             return dataTable;
-        }
-        public string GetBlackListDataQuery(int personid)
-        {
-            string query = "select p.PersonId, FirstName,OtherNames,Surname,DateOfBirth,DateOfRegistration,d.Name as District, (select Blob from PersonBlob pb where Type=16 and pb.PersonId=p.PersonId ) as Photo " +
-                "from Person p join Village v on v.VillageId=p.PlaceOfRegistrationId join Section s on s.SectionId=v.SectionId join Chiefdom c on c.ChiefdomId=s.ChiefdomId join District d on d.DistrictId=c.DistrictId " +
-                "where Status=285 and PersonId='" + personid + "'";
-
-            return query;
         }
     }
 }

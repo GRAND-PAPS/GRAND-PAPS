@@ -96,7 +96,7 @@
                         <label class="m5">Personal ID:</label>
                     </div>
                     <div class="col-lg-5">
-                        <asp:Label ID="PersonID" CssClass="" runat="server" Font-Bold="true" Font-Size="Larger" Font-Italic="true" Text="MMMM"></asp:Label>
+                        <asp:Label ID="lblPersonID" CssClass="" runat="server" Font-Bold="true" Font-Size="Larger" Font-Italic="true" Text="MMMM"></asp:Label>
                     </div>
                 </div>
                 <div class="col-lg-12">
@@ -174,10 +174,10 @@
                 <%--button for Blacklist and Remove--%>
                 <div class="col-lg-12 row">
                     <div class="col-lg-6">
-                        <asp:Button ID="Blacklistbtn" runat="server" CssClass="btn btn-danger" Text="BLACKLIST RECORD" /> 
+                        <asp:Button ID="Blacklistbtn" runat="server" CssClass="btn btn-danger" Text="BLACKLIST RECORD" OnClick="Blacklistbtn_Click" /> 
                     </div>
                     <div class="col-lg-6 text-right">
-                        <asp:Button ID="removeblacklistbtn" runat="server" CssClass="btn btn-success" Text="REMOVE BLACKLIST" />
+                        <asp:Button ID="removeblacklistbtn" runat="server" CssClass="btn btn-success" Text="REMOVE BLACKLIST" OnClick="removeblacklistbtn_Click" />
                     </div>
                 </div>
             </div>
@@ -187,9 +187,9 @@
                 <%--<div class="" style="height:260px;">
                     
                 </div>--%>
-                <%--<div class="w3-margin-24 text-center">
-                    <asp:Label ID="blacklistagelbl" runat="server" CssClass="text-info" Font-Bold="true" Font-Size="XX-Large" Text="00"></asp:Label>
-                </div>--%>
+                <div class="w3-margin-24 text-center">
+                    <asp:Label ID="blacklistagelbl" runat="server" CssClass="text-info" Font-Bold="true" Font-Size="Large" Text="00"></asp:Label>
+                </div>
             </div>
             
         </div>

@@ -131,6 +131,7 @@
       <DependentUpon>manifest.aspx</DependentUpon>
     </Compile>
     <Compile Include="Model\BlackListData.cs" />
+    <Compile Include="Model\DashBoradQueries.cs" />
     <Compile Include="Model\DuplicateData.cs" />
     <Compile Include="Model\PrintingData.cs" />
     <Compile Include="Model\RegistrationData.cs" />
