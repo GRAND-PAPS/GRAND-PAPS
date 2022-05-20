@@ -15,14 +15,14 @@
     <script src="js/bootstrap.min.js"></script>
 </head>
 <body class="">
-    <div class="container">
+    <div class="">
         <img src="logo_nrb.png">
     </div>
 
      <%-- sidebar Navigation--%>
-    <div class="sidebar-nav col-lg-2 zi-m-top">
-        <ul class="nav flex-column">
-          <li class="nav-item alert-info w3-margin"><a href="index.aspx" rel="stylesheet" class="nav-link"><strong>PRODUCTION DASHBOARD</strong></a></li>  
+    <nav class="col-lg-2">
+        <ul class="nav flex-column zi-m-top">
+          <li class="nav-item alert-info w3-margin"><a href="index.aspx" rel="stylesheet" class="nav-link text-small"><strong>PRODUCTION DASHBOARD</strong></a></li>  
           <li class="nav-item alert-info w3-margin"><a href="Login.aspx" rel="stylesheet" class="nav-link"><strong>PRODUCTION REPORTS</strong></a></li>  
           <li class="nav-item alert-info w3-margin"><a href="manifest.aspx" rel="stylesheet" class="nav-link"><strong>MANIFEST GENERATOR</strong></a></li>  
           <li class="nav-item alert-info w3-margin"><a href="duplicate.aspx" rel="stylesheet" class="nav-link"><strong>DUPLICATES CHECK</strong></a></li>  
@@ -34,47 +34,47 @@
             <div class="w3-margin text-center"> <a href="#" rel="stylesheet" class="btn btn-md alert-success">BLACKLISTS CHECK</a> </div>
             <div class="w3-margin text-center"> <a href="#" rel="stylesheet" class="btn btn-md alert-success">REVENUE ANALYSIS</a> </div>--%>
         </ul>
-    </div>
+    </nav>
 
 <%--main form--%>
-    <form id="form1" runat="server" class="container col-lg-8">
+    <form id="form1" runat="server" class="col-lg-8 container">
         <div>
            <%-- Day, Night and Total Printed Divs --%>
-      <div class="col-lg-12">
-        <div class="col-sm-12 row w3-margin-16">
-            <div class="w3-card-12 col-sm-4">
-                <div class="">
-                    <h4 class="text-info text-center"><strong>TODAY TOTAL PRINTED</strong></h4>
-                </div>    
-                <div class="alert text-right">
-                    <asp:Label CssClass="" ID="printedtoday" runat="server" Font-Size="XX-Large" Font-Bold="true">000</asp:Label>
-                </div>            
+              <div class="col-lg-12">
+                <div class="col-sm-12 row w3-margin-16">
+                    <div class="w3-card-12 col-sm-4">
+                        <div class="">
+                            <h4 class="text-info text-center"><strong>TODAY TOTAL PRINTED</strong></h4>
+                        </div>    
+                        <div class="alert text-right">
+                            <asp:Label CssClass="" ID="printedtoday" runat="server" Font-Size="XX-Large" Font-Bold="true">000</asp:Label>
+                        </div>            
+                    </div>
+
+                    <div class="w3-card-12 col-sm-4">
+                        <div class="">
+                            <h4 class="text-info text-center"><strong>DAY SHIFT</strong></h4>
+                        </div>    
+                        <div class="alert text-right">
+                            <asp:Label CssClass="" ID="dayshiftprinted" runat="server" Font-Size="XX-Large" Font-Bold="true">000</asp:Label>
+                        </div>            
+                    </div>
+
+                    <div class="w3-card-12 col-sm-4">
+                        <div class="">
+                            <h4 class="text-info text-center"><strong>NIGHT SHIFT</strong></h4>
+                        </div>    
+                        <div class="alert text-right">
+                            <asp:Label CssClass="text-left" ID="nightshiftprinted" runat="server" Font-Size="XX-Large" Font-Bold="true">000</asp:Label>
+                        </div>            
+                    </div>
+                </div>
             </div>
 
-            <div class="w3-card-12 col-sm-4">
-                <div class="">
-                    <h4 class="text-info text-center"><strong>DAY SHIFT</strong></h4>
-                </div>    
-                <div class="alert text-right">
-                    <asp:Label CssClass="" ID="dayshiftprinted" runat="server" Font-Size="XX-Large" Font-Bold="true">000</asp:Label>
-                </div>            
-            </div>
-
-            <div class="w3-card-12 col-sm-4">
-                <div class="">
-                    <h4 class="text-info text-center"><strong>NIGHT SHIFT</strong></h4>
-                </div>    
-                <div class="alert text-right">
-                    <asp:Label CssClass="text-left" ID="nightshiftprinted" runat="server" Font-Size="XX-Large" Font-Bold="true">000</asp:Label>
-                </div>            
-            </div>
-        </div>
-    </div>
-
-            <%-- Content Placeholder for the Other pages --%>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
+                    <%-- Content Placeholder for the Other pages --%>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+         </div>
     </form>
 
 </body>
