@@ -45,18 +45,20 @@
     <div class="row col-lg-12 w3-margin-16">
         <div class="col-sm-6 alert w3-card-4">
             <div class="">
-                <h4><strong>DAY OFFICERS:</strong></h4>
+                <h4><strong>OFFICERS:</strong></h4>
+                <asp:Panel ID="Officerspanel" runat="server" CssClass="mt-3"></asp:Panel>
             </div>
         </div>
         <div class="col-sm-6 alert w3-card-4">
             <div class="">
-                <h4><strong>NIGHT OFFICERS:</strong></h4>
+                <h4><strong>DISTRICTS:</strong></h4>
+                <asp:Panel ID="Districtpanel" runat="server" CssClass="mt-3"></asp:Panel>
             </div>
         </div>
     </div>
 
    <%-- Divs contain Districts Printed --%>
-     <div class="row col-lg-12 w3-margin-16">
+   <%--  <div class="row col-lg-12 w3-margin-16">
         <div class="col-sm-6 alert w3-card-4">
             <div class="">
                 <h4><strong>DAY DISTRICTS:</strong></h4>
@@ -67,6 +69,6 @@
                 <h4><strong>NIGHT DISTRICTS:</strong></h4>
             </div>
         </div>
-    </div>
+    </div>--%>
 
 </asp:Content>
