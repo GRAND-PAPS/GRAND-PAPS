@@ -13,5 +13,23 @@ namespace Production
 
     public partial class index
     {
+
+        /// <summary>
+        /// Officerspanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Officerspanel;
+
+        /// <summary>
+        /// Districtpanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Districtpanel;
     }
 }

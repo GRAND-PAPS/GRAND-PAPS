@@ -50,12 +50,6 @@
 
  <%--main Grid Div of manifest results--%>
     <div class="w3-margin-top">
-        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Height="487px" Width="1182px" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt">
-            <LocalReport ReportPath="Reports\Manifest.rdlc">
-            </LocalReport>
-        </rsweb:ReportViewer>
-
-        <asp:SqlDataSource runat="server" ID="SqlDataSource1"></asp:SqlDataSource>
+       
     </div>
 </asp:Content>
