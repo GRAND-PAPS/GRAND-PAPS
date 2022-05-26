@@ -1,4 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Production.Master" AutoEventWireup="true" CodeBehind="manifest.aspx.cs" Inherits="Production.manifest" %>
+
+<%@ Register Assembly="Microsoft.ReportViewer.WebForms" Namespace="Microsoft.Reporting.WebForms" TagPrefix="rsweb" %>
+
+ <%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="">
         <h2 class="text-center">
@@ -17,7 +22,7 @@
              <asp:TextBox ID="manifestsearch" runat="server" type="text" placeholder="ID NUMBER" CssClass="form-control text-uppercase" Font-Size="Larger"></asp:TextBox>
         </div>
         <div class="col-lg-2">
-            <asp:Button ID="manifestsearchbtn" runat="server" CssClass="btn btn-md btn-primary" Text="SEARCH"/>
+            <asp:Button ID="manifestsearchbtn" runat="server" CssClass="btn btn-md btn-primary" Text="SEARCH" OnClick="manifestsearchbtn_Click"/>
         </div>          
     </div>
 
@@ -45,6 +50,12 @@
 
  <%--main Grid Div of manifest results--%>
     <div class="w3-margin-top">
-        issah
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Height="487px" Width="1182px" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt">
+            <LocalReport ReportPath="Reports\Manifest.rdlc">
+            </LocalReport>
+        </rsweb:ReportViewer>
+
+        <asp:SqlDataSource runat="server" ID="SqlDataSource1"></asp:SqlDataSource>
     </div>
 </asp:Content>
