@@ -135,6 +135,11 @@
     <Compile Include="blacklist.aspx.designer.cs">
       <DependentUpon>blacklist.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DBConnects.cs" />
     <Compile Include="duplicate.aspx.cs">
       <DependentUpon>duplicate.aspx</DependentUpon>
@@ -149,11 +154,6 @@
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="INRS2DataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>INRS2DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -179,6 +179,7 @@
     <Compile Include="Model\DuplicateData.cs" />
     <Compile Include="Model\PrintingData.cs" />
     <Compile Include="Model\RegistrationData.cs" />
+    <Compile Include="Model\ReportsQuery.cs" />
     <Compile Include="Model\SynchronisationData.cs" />
     <Compile Include="Model\UnderDuressData.cs" />
     <Compile Include="Production.Master.cs">
@@ -205,18 +206,18 @@
     <Content Include="js\bootstrap.esm.min.js.map" />
     <Content Include="js\bootstrap.js.map" />
     <Content Include="js\bootstrap.min.js.map" />
-    <Content Include="INRS2DataSet.xsc">
-      <DependentUpon>INRS2DataSet.xsd</DependentUpon>
-    </Content>
-    <None Include="INRS2DataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>INRS2DataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="INRS2DataSet.xss">
-      <DependentUpon>INRS2DataSet.xsd</DependentUpon>
-    </Content>
     <Content Include="Model\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
+    <Content Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Content>
     <None Include="Model\DataSet1.xsd">

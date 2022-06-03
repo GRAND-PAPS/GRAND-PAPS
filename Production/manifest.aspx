@@ -50,6 +50,17 @@
 
  <%--main Grid Div of manifest results--%>
     <div class="w3-margin-top">
-       
+        <rsweb:ReportViewer ID="ReportViewer1" runat="server" BackColor="" ClientIDMode="AutoID" HighlightBackgroundColor="" InternalBorderColor="204, 204, 204" InternalBorderStyle="Solid" InternalBorderWidth="1px" LinkActiveColor="" LinkActiveHoverColor="" LinkDisabledColor="" PrimaryButtonBackgroundColor="" PrimaryButtonForegroundColor="" PrimaryButtonHoverBackgroundColor="" PrimaryButtonHoverForegroundColor="" SecondaryButtonBackgroundColor="" SecondaryButtonForegroundColor="" SecondaryButtonHoverBackgroundColor="" SecondaryButtonHoverForegroundColor="" SplitterBackColor="" ToolbarDividerColor="" ToolbarForegroundColor="" ToolbarForegroundDisabledColor="" ToolbarHoverBackgroundColor="" ToolbarHoverForegroundColor="" ToolBarItemBorderColor="" ToolBarItemBorderStyle="Solid" ToolBarItemBorderWidth="1px" ToolBarItemHoverBackColor="" ToolBarItemPressedBorderColor="51, 102, 153" ToolBarItemPressedBorderStyle="Solid" ToolBarItemPressedBorderWidth="1px" ToolBarItemPressedHoverBackColor="153, 187, 226" Width="897px">
+            <LocalReport ReportPath="Reports\Manifest.rdlc">
+            </LocalReport>
+        </rsweb:ReportViewer>
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:INRS2ConnectionString %>" SelectCommand="select PIN, d.Name as District, c.Name as TA, v.Name as Village, Surname,FirstName,PrinterId,pc.EditUser from PersonCard pc
+join Village v on v.VillageId=pc.PlaceOfRegistrationId
+join Section s on s.SectionId=v.SectionId
+join Chiefdom c on c.ChiefdomId=s.ChiefdomId
+join District d on d.DistrictId=c.DistrictId
+where ManifestId=1"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:INRS2ConnectionString %>" SelectCommand="PrintManifests" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     </div>
 </asp:Content>
